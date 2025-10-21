@@ -1,0 +1,101 @@
+export const data = [
+  {
+    id: "1",
+    title: "Cozy 1-bedroom apartment",
+    description:
+      "Sunny apartment near downtown. Fully furnished, great for students.",
+    host: {
+      id: "101",
+      name: "Altan",
+      photo:
+        "https://imgmediagumlet.lbb.in/media/2024/10/6708af041979cc1b0f30ea72_1728622340999.jpg",
+      rating: 4.8,
+    },
+    location: {
+      city: "Ulaanbaatar",
+      district: "Bayanzurkh",
+      address: "Peace street 15",
+      lat: 47.9213,
+      lng: 106.9186,
+    },
+    pricePerMonth: 450000,
+    bedrooms: 1,
+    bathrooms: 1,
+    shared: true,
+    maxRoommates: 2,
+    images: [
+      "https://imgmediagumlet.lbb.in/media/2024/10/6708af041979cc1b0f30ea72_1728622340999.jpg",
+      "https://imgmediagumlet.lbb.in/media/2024/10/6708af041979cc1b0f30ea72_1728622340999.jpg",
+      "https://imgmediagumlet.lbb.in/media/2024/10/6708af041979cc1b0f30ea72_1728622340999.jpg",
+    ],
+    amenities: ["WiFi", "Heating", "Kitchen", "Washer"],
+    availableFrom: "2025-10-01",
+    availableTo: "2026-03-01",
+    reviews: [{ user: "Sara", rating: 5, comment: "Great place, very clean!" }],
+  },
+  {
+    id: "2",
+    title: "Modern studio near downtown",
+    description: "Studio with balcony, fully furnished, perfect for singles.",
+    host: {
+      id: "102",
+      name: "Naraa",
+      photo:
+        "https://www.spectruminteriors.co.in/wp-content/uploads/2021/10/Bedroom-41.jpeg",
+      rating: 4.6,
+    },
+    location: {
+      city: "Ulaanbaatar",
+      district: "Sukhbaatar",
+      address: "Freedom street 22",
+      lat: 47.92,
+      lng: 106.918,
+    },
+    pricePerMonth: 550000,
+    bedrooms: 1,
+    bathrooms: 1,
+    shared: false,
+    maxRoommates: 1,
+    images: [
+      "https://www.spectruminteriors.co.in/wp-content/uploads/2021/10/Bedroom-41.jpeg",
+      "https://www.spectruminteriors.co.in/wp-content/uploads/2021/10/Bedroom-41.jpeg",
+    ],
+    amenities: ["WiFi", "Heating", "Air Conditioning"],
+    availableFrom: "2025-09-20",
+    availableTo: "2026-02-20",
+    reviews: [{ user: "Bat", rating: 4, comment: "Nice location, but small." }],
+  },
+  {
+    id: "3",
+    title: "Spacious 2-bedroom apartment",
+    description:
+      "Perfect for roommates, lots of light, furnished kitchen and living room.",
+    host: {
+      id: "103",
+      name: "Munkh",
+      photo:
+        "https://www.asenseinterior.com/assets/mediafile/bedroom-with-bed-lamp-wall_(1).webp",
+      rating: 4.9,
+    },
+    location: {
+      city: "Ulaanbaatar",
+      district: "Chingeltei",
+      address: "Peace avenue 5",
+      lat: 47.9225,
+      lng: 106.9155,
+    },
+    pricePerMonth: 650000,
+    bedrooms: 2,
+    bathrooms: 2,
+    shared: true,
+    maxRoommates: 3,
+    images: [
+      "https://www.asenseinterior.com/assets/mediafile/bedroom-with-bed-lamp-wall_(1).webp",
+      "https://www.asenseinterior.com/assets/mediafile/bedroom-with-bed-lamp-wall_(1).webp",
+    ],
+    amenities: ["WiFi", "Heating", "Kitchen", "Washer", "Balcony"],
+    availableFrom: "2025-11-01",
+    availableTo: "2026-04-01",
+    reviews: [{ user: "Sara", rating: 5, comment: "Very spacious and clean!" }],
+  },
+];

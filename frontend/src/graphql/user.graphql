@@ -1,0 +1,62 @@
+mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    success
+    message
+    user {
+      id
+      name
+      email
+      phone
+      image
+      bio
+      age
+      gender
+      role
+      createdAt
+      updatedAt
+    }
+    token
+  }
+}
+
+mutation Login($input: LoginInput!) {
+  login(input: $input) {
+    success
+    message
+    user {
+      id
+      name
+      email
+      phone
+      image
+      bio
+      age
+      gender
+      role
+      createdAt
+      updatedAt
+    }
+    token
+  }
+}
+
+query GetUser($getUserId: ID!) {
+  getUser(id: $getUserId) {
+    success
+    message
+    user {
+      id
+      name
+      email
+      phone
+      image
+      bio
+      age
+      gender
+      role
+      createdAt
+      updatedAt
+    }
+    token
+  }
+}

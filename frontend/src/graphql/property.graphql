@@ -1,0 +1,176 @@
+mutation CreateProperty($input: CreatePropertyInput!) {
+  createProperty(input: $input) {
+    success
+    message
+    property {
+      id
+      title
+      description
+      host {
+        id
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+query GetProperty($getPropertyId: ID!) {
+  getProperty(id: $getPropertyId) {
+    success
+    message
+    property {
+      id
+      title
+      description
+      host {
+        name
+        image
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+query SearchProperties($input: PropertySearchInput!) {
+  searchProperties(input: $input) {
+    success
+    message
+    properties {
+      id
+      title
+      description
+      host {
+        name
+        image
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query GetProperties {
+  getProperties {
+    success
+    message
+    properties {
+      id
+      title
+      description
+      host {
+        name
+        image
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query GetPropertiesByHost($hostId: ID!) {
+  getPropertiesByHost(hostId: $hostId) {
+    success
+    message
+    properties {
+      id
+      title
+      description
+      host {
+        name
+        image
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}

@@ -1,0 +1,14 @@
+# Generated files
+src/generated/
+
+# Build output
+.next/
+out/
+build/
+
+# Dependencies
+node_modules/
+
+# Misc
+.DS_Store
+*.log 

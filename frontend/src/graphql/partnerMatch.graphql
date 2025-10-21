@@ -1,0 +1,97 @@
+query GetPartnerMatch($id: ID!) {
+  getPartnerMatch(id: $id) {
+    success
+    message
+    match {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+query GetPartnerMatchesByUser($userId: ID!) {
+  getPartnerMatchesByUser(userId: $userId) {
+    success
+    message
+    matches {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query GetPartnerMatchesByProperty($propertyId: ID!) {
+  getPartnerMatchesByProperty(propertyId: $propertyId) {
+    success
+    message
+    matches {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+mutation CreatePartnerMatch($input: CreatePartnerMatchInput!) {
+  createPartnerMatch(input: $input) {
+    success
+    message
+    match {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+mutation UpdatePartnerMatch($input: UpdatePartnerMatchInput!) {
+  updatePartnerMatch(input: $input) {
+    success
+    message
+    match {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+mutation DeletePartnerMatch($id: ID!) {
+  deletePartnerMatch(id: $id) {
+    success
+    message
+    match {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}

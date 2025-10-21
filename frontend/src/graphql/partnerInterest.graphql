@@ -1,0 +1,124 @@
+query GetPartnerInterest($id: ID!) {
+  getPartnerInterest(id: $id) {
+    success
+    message
+    interest {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+query GetPartnerInterestsByUser($userId: ID!) {
+  getPartnerInterestsByUser(userId: $userId) {
+    success
+    message
+    interests {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query GetPartnerInterestsByTarget($targetUserId: ID!) {
+  getPartnerInterestsByTarget(targetUserId: $targetUserId) {
+    success
+    message
+    interests {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query CheckMutualInterest($userAId: ID!, $userBId: ID!) {
+  checkMutualInterest(userAId: $userAId, userBId: $userBId) {
+    success
+    message
+    interest {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+    matchCreated
+  }
+}
+
+mutation CreatePartnerInterest($input: CreatePartnerInterestInput!) {
+  createPartnerInterest(input: $input) {
+    success
+    message
+    interest {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+    matchCreated
+    match {
+      id
+      userAId
+      userBId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+mutation UpdatePartnerInterest($input: UpdatePartnerInterestInput!) {
+  updatePartnerInterest(input: $input) {
+    success
+    message
+    interest {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+mutation DeletePartnerInterest($id: ID!) {
+  deletePartnerInterest(id: $id) {
+    success
+    message
+    interest {
+      id
+      userId
+      targetUserId
+      propertyId
+      status
+      createdAt
+      updatedAt
+    }
+  }
+}

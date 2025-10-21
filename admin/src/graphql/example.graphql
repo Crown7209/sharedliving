@@ -1,0 +1,7 @@
+query GetExample {
+  getExample {
+    id
+    name
+    language
+  }
+}

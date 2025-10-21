@@ -1,0 +1,136 @@
+query GetPartnerProfiles {
+  getPartnerProfiles {
+    success
+    message
+    profiles {
+      id
+      userId
+      user {
+        id
+        name
+        email
+        phone
+        image
+        bio
+        age
+        gender
+        role
+        createdAt
+        updatedAt
+      }
+      targetPropertyId
+      preferredLocation
+      budgetMin
+      budgetMax
+      moveInDate
+      stayDurationMonths
+      roommateCount
+      genderPreference
+      lifestyle
+      about
+      isLookingForPartner
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query GetPartnerProfilesByUser($userId: ID!) {
+  getPartnerProfilesByUser(userId: $userId) {
+    success
+    message
+    profiles {
+      id
+      userId
+      user {
+        id
+        name
+        email
+        phone
+        image
+        bio
+        age
+        gender
+        role
+        createdAt
+        updatedAt
+      }
+      targetPropertyId
+      preferredLocation
+      budgetMin
+      budgetMax
+      moveInDate
+      stayDurationMonths
+      roommateCount
+      genderPreference
+      lifestyle
+      about
+      isLookingForPartner
+      createdAt
+      updatedAt
+    }
+    totalCount
+  }
+}
+
+query GetPartnerProfile($id: ID!) {
+  getPartnerProfile(id: $id) {
+    success
+    message
+    profile {
+      id
+      userId
+      user {
+        id
+        name
+        email
+        phone
+        image
+        bio
+        age
+        gender
+        role
+        createdAt
+        updatedAt
+      }
+      targetPropertyId
+      preferredLocation
+      budgetMin
+      budgetMax
+      moveInDate
+      stayDurationMonths
+      roommateCount
+      genderPreference
+      lifestyle
+      about
+      isLookingForPartner
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+mutation createPartnerProfile($input: CreatePartnerProfileInput!) {
+  createPartnerProfile(input: $input) {
+    success
+    message
+    profile {
+      id
+      userId
+      targetPropertyId
+      preferredLocation
+      budgetMin
+      budgetMax
+      moveInDate
+      stayDurationMonths
+      roommateCount
+      genderPreference
+      lifestyle
+      about
+      isLookingForPartner
+      createdAt
+      updatedAt
+    }
+  }
+}
