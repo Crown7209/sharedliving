@@ -42,7 +42,6 @@ const PartnerMatchSchema = new Schema<PartnerMatch>(
   }
 );
 
-// Indexes for better query performance
 PartnerMatchSchema.index({ userAId: 1, userBId: 1 }, { unique: true });
 PartnerMatchSchema.index({ userAId: 1 });
 PartnerMatchSchema.index({ userBId: 1 });
