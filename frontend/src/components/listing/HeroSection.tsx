@@ -19,7 +19,7 @@ export const HeroSection = ({ images, title }: HeroSectionProps) => {
   return (
     <div className="w-full space-y-4">
       {/* Main Image */}
-      <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+      <div className="relative w-full h-[400px] md:h-[564px] rounded-lg overflow-hidden">
         <Image
           src={images[selectedImage]}
           alt={`${title} - Image ${selectedImage + 1}`}
@@ -73,7 +73,7 @@ export const HeroSection = ({ images, title }: HeroSectionProps) => {
               onClick={() => setSelectedImage(index)}
               className={`relative w-16 h-12 flex-shrink-0 rounded-md overflow-hidden cursor-pointer transition-all ${
                 selectedImage === index
-                  ? "ring-2 ring-foreground"
+                  ? "border border-primary"
                   : "hover:opacity-80"
               }`}
             >

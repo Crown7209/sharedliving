@@ -754,6 +754,13 @@ export type GetPropertiesByHostQueryVariables = Exact<{
 
 export type GetPropertiesByHostQuery = { __typename?: 'Query', getPropertiesByHost?: { __typename?: 'PropertiesResponse', success: boolean, message: string, totalCount: number, properties: Array<{ __typename?: 'Property', id: string, title: string, description?: string | null, pricePerMonth: number, roomCount: number, shared: boolean, maxRoommates?: number | null, images?: Array<string> | null, amenities?: Array<string> | null, propertyType?: PropertyType | null, availableFrom: string, availableTo: string, isActive: boolean, createdAt: string, updatedAt: string, host: { __typename?: 'Host', name: string, image?: string | null }, location: { __typename?: 'Location', city: string, district: string, address?: string | null, lat?: number | null, lng?: number | null } }> } | null };
 
+export type UpdatePropertyMutationVariables = Exact<{
+  input: UpdatePropertyInput;
+}>;
+
+
+export type UpdatePropertyMutation = { __typename?: 'Mutation', updateProperty?: { __typename?: 'PropertyResponse', success: boolean, message: string, property?: { __typename?: 'Property', id: string, title: string, description?: string | null, pricePerMonth: number, roomCount: number, shared: boolean, maxRoommates?: number | null, images?: Array<string> | null, amenities?: Array<string> | null, propertyType?: PropertyType | null, availableFrom: string, availableTo: string, isActive: boolean, createdAt: string, updatedAt: string, host: { __typename?: 'Host', id: string }, location: { __typename?: 'Location', city: string, district: string, address?: string | null, lat?: number | null, lng?: number | null } } | null } | null };
+
 export type CreateUserMutationVariables = Exact<{
   input: CreateUserInput;
 }>;
@@ -2004,6 +2011,67 @@ export type GetPropertiesByHostQueryHookResult = ReturnType<typeof useGetPropert
 export type GetPropertiesByHostLazyQueryHookResult = ReturnType<typeof useGetPropertiesByHostLazyQuery>;
 export type GetPropertiesByHostSuspenseQueryHookResult = ReturnType<typeof useGetPropertiesByHostSuspenseQuery>;
 export type GetPropertiesByHostQueryResult = Apollo.QueryResult<GetPropertiesByHostQuery, GetPropertiesByHostQueryVariables>;
+export const UpdatePropertyDocument = gql`
+    mutation UpdateProperty($input: UpdatePropertyInput!) {
+  updateProperty(input: $input) {
+    success
+    message
+    property {
+      id
+      title
+      description
+      host {
+        id
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+  }
+}
+    `;
+export type UpdatePropertyMutationFn = Apollo.MutationFunction<UpdatePropertyMutation, UpdatePropertyMutationVariables>;
+
+/**
+ * __useUpdatePropertyMutation__
+ *
+ * To run a mutation, you first call `useUpdatePropertyMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdatePropertyMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updatePropertyMutation, { data, loading, error }] = useUpdatePropertyMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useUpdatePropertyMutation(baseOptions?: Apollo.MutationHookOptions<UpdatePropertyMutation, UpdatePropertyMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<UpdatePropertyMutation, UpdatePropertyMutationVariables>(UpdatePropertyDocument, options);
+      }
+export type UpdatePropertyMutationHookResult = ReturnType<typeof useUpdatePropertyMutation>;
+export type UpdatePropertyMutationResult = Apollo.MutationResult<UpdatePropertyMutation>;
+export type UpdatePropertyMutationOptions = Apollo.BaseMutationOptions<UpdatePropertyMutation, UpdatePropertyMutationVariables>;
 export const CreateUserDocument = gql`
     mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {

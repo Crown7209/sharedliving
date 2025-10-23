@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/popover";
 import { useCreatePartnerProfileForm } from "@/hooks/useCreatePartnerProfileForm";
 import { useAuth } from "@/contexts/AuthContext";
-import { ChevronDownIcon } from "lucide-react";
+import { ChevronDownIcon, PencilIcon } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { GenderPreferenceEnum } from "@/generated/graphql";
@@ -72,8 +72,11 @@ export const PartnerProfilePage = () => {
                 alt="User profile"
                 width={80}
                 height={80}
-                className="w-20 h-20 rounded-full object-cover border border-gray-300"
+                className="w-24 h-24 rounded-full object-cover border border-gray-200"
               />
+              <div className="absolute bottom-0 right-0 border border-gray-200 rounded-full p-2 bg-white cursor-pointer">
+                <PencilIcon size={16} />
+              </div>
             </div>
             <p className="text-sm text-gray-600 text-center">
               {user?.name || "Your profile picture"}

@@ -174,3 +174,37 @@ query GetPropertiesByHost($hostId: ID!) {
     totalCount
   }
 }
+
+mutation UpdateProperty($input: UpdatePropertyInput!) {
+  updateProperty(input: $input) {
+    success
+    message
+    property {
+      id
+      title
+      description
+      host {
+        id
+      }
+      location {
+        city
+        district
+        address
+        lat
+        lng
+      }
+      pricePerMonth
+      roomCount
+      shared
+      maxRoommates
+      images
+      amenities
+      propertyType
+      availableFrom
+      availableTo
+      isActive
+      createdAt
+      updatedAt
+    }
+  }
+}

@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
       "pbs.twimg.com",
       "content.imageresizer.com",
       "i.kym-cdn.com",
+      "antonovich-design.com",
+      "sumesshmenonassociates.com",
+      "winksleep.co.uk",
+      "evolveindia.co",
+      "media.vogue.co.uk",
+      "res.cloudinary.com",
     ],
   },
 };

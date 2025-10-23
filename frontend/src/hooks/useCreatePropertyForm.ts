@@ -15,11 +15,11 @@ export const useCreatePropertyForm = () => {
   const [bathrooms, setBathrooms] = useState<number>(1);
   const [shared, setShared] = useState<boolean>(false);
   const [maxRoommates, setMaxRoommates] = useState<number>(1);
-  const [city, setCity] = useState("Ulaanbaatar");
+  const [city, setCity] = useState("");
   const [district, setDistrict] = useState("");
   const [address, setAddress] = useState("");
-  const [amenities, setAmenities] = useState<string[]>([]);
-  const [images, setImages] = useState<string[]>([]);
+  const [amenities, setAmenities] = useState<string[]>([""]);
+  const [images, setImages] = useState<string[]>([""]);
   const [availableFrom, setAvailableFrom] = useState("");
   const [availableTo, setAvailableTo] = useState("");
   const [propertyType, setPropertyType] = useState("APARTMENT");
@@ -44,11 +44,11 @@ export const useCreatePropertyForm = () => {
     setBathrooms(1);
     setShared(false);
     setMaxRoommates(1);
-    setCity("Ulaanbaatar");
+    setCity("");
     setDistrict("");
     setAddress("");
-    setAmenities([]);
-    setImages([]);
+    setAmenities([""]);
+    setImages([""]);
     setAvailableFrom("");
     setAvailableTo("");
     setPropertyType("APARTMENT");
@@ -58,18 +58,8 @@ export const useCreatePropertyForm = () => {
     setIsSubmitted(false);
   };
 
-  const isFormValid = () => {
-    if (!title || !description || !district || !address || pricePerMonth <= 0) {
-      toast.error("Please fill in all required fields");
-      return false;
-    }
-    return true;
-  };
-
   const handleCreateProperty = async () => {
     setIsSubmitted(true);
-
-    // if (!isFormValid()) return;
 
     setIsSubmitLoading(true);
 
@@ -77,21 +67,21 @@ export const useCreatePropertyForm = () => {
       const result = await createProperty({
         variables: {
           input: {
-            title: "-/-",
-            description: "-/-",
+            title: "",
+            description: "",
             pricePerMonth: 1,
             roomCount: 1,
             shared: false,
             maxRoommates: 1,
             location: {
-              city: "-/-",
-              district: "-/-",
-              address: "-/-",
+              city: "",
+              district: "",
+              address: "",
             },
-            amenities: ["-/-"],
-            images: ["-/-"],
-            availableFrom: "-/-",
-            availableTo: "-/-",
+            amenities: amenities.filter((amenity) => amenity.trim() !== ""),
+            images: images.filter((image) => image.trim() !== ""),
+            availableFrom: "",
+            availableTo: "",
             propertyType: PropertyType.APARTMENT,
             hostId: user?.id || "",
             isActive: false,
@@ -165,7 +155,6 @@ export const useCreatePropertyForm = () => {
 
     // Actions
     clearAllFields,
-    isFormValid,
     handleCreateProperty,
   };
 };
