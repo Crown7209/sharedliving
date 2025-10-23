@@ -31,9 +31,25 @@ export const propertyMutations = {
         };
       }
 
-      // Create property with host information
+      // Create property with host information and default values
       const property = new PropertyModel({
-        ...propertyData,
+        title: propertyData.title || "",
+        description: propertyData.description || "",
+        location: propertyData.location || {
+          city: "",
+          district: "",
+          address: "",
+        },
+        pricePerMonth: propertyData.pricePerMonth || 0,
+        roomCount: propertyData.roomCount || 1,
+        shared: propertyData.shared !== undefined ? propertyData.shared : false,
+        maxRoommates: propertyData.maxRoommates || 1,
+        images: propertyData.images || [],
+        amenities: propertyData.amenities || [],
+        propertyType: propertyData.propertyType || "apartment",
+        privacyType: propertyData.privacyType || "entire_place",
+        availableFrom: propertyData.availableFrom || "",
+        availableTo: propertyData.availableTo || "",
         isActive:
           propertyData.isActive !== undefined ? propertyData.isActive : true,
         host: {

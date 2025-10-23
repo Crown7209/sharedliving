@@ -47,21 +47,21 @@ export type CreatePartnerProfileInput = {
 };
 
 export type CreatePropertyInput = {
-  amenities?: InputMaybe<Array<Scalars['String']['input']>>;
-  availableFrom: Scalars['String']['input'];
-  availableTo: Scalars['String']['input'];
+  amenities?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  availableFrom?: InputMaybe<Scalars['String']['input']>;
+  availableTo?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   hostId: Scalars['ID']['input'];
-  images?: InputMaybe<Array<Scalars['String']['input']>>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   isActive?: InputMaybe<Scalars['Boolean']['input']>;
-  location: LocationInput;
+  location?: InputMaybe<LocationInput>;
   maxRoommates?: InputMaybe<Scalars['Int']['input']>;
-  pricePerMonth: Scalars['Float']['input'];
+  pricePerMonth?: InputMaybe<Scalars['Float']['input']>;
   privacyType?: InputMaybe<PrivacyType>;
   propertyType?: InputMaybe<PropertyType>;
-  roomCount: Scalars['Int']['input'];
-  shared: Scalars['Boolean']['input'];
-  title: Scalars['String']['input'];
+  roomCount?: InputMaybe<Scalars['Int']['input']>;
+  shared?: InputMaybe<Scalars['Boolean']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CreateUserInput = {
@@ -132,8 +132,8 @@ export type Location = {
 
 export type LocationInput = {
   address?: InputMaybe<Scalars['String']['input']>;
-  city: Scalars['String']['input'];
-  district: Scalars['String']['input'];
+  city?: InputMaybe<Scalars['String']['input']>;
+  district?: InputMaybe<Scalars['String']['input']>;
   lat?: InputMaybe<Scalars['Float']['input']>;
   lng?: InputMaybe<Scalars['Float']['input']>;
 };
@@ -343,14 +343,14 @@ export type PropertiesResponse = {
 };
 
 export type Property = {
-  amenities: Maybe<Array<Scalars['String']['output']>>;
+  amenities: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   availableFrom: Scalars['String']['output'];
   availableTo: Scalars['String']['output'];
   createdAt: Scalars['String']['output'];
   description: Maybe<Scalars['String']['output']>;
   host: Host;
   id: Scalars['ID']['output'];
-  images: Maybe<Array<Scalars['String']['output']>>;
+  images: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   isActive: Scalars['Boolean']['output'];
   location: Location;
   maxRoommates: Maybe<Scalars['Int']['output']>;
@@ -370,7 +370,7 @@ export type PropertyResponse = {
 };
 
 export type PropertySearchInput = {
-  amenities?: InputMaybe<Array<Scalars['String']['input']>>;
+  amenities?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   availableFrom?: InputMaybe<Scalars['String']['input']>;
   availableTo?: InputMaybe<Scalars['String']['input']>;
   city?: InputMaybe<Scalars['String']['input']>;
@@ -521,12 +521,12 @@ export type UpdatePartnerProfileInput = {
 };
 
 export type UpdatePropertyInput = {
-  amenities?: InputMaybe<Array<Scalars['String']['input']>>;
+  amenities?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   availableFrom?: InputMaybe<Scalars['String']['input']>;
   availableTo?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   id: Scalars['ID']['input'];
-  images?: InputMaybe<Array<Scalars['String']['input']>>;
+  images?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   isActive?: InputMaybe<Scalars['Boolean']['input']>;
   location?: InputMaybe<LocationInput>;
   maxRoommates?: InputMaybe<Scalars['Int']['input']>;
@@ -874,14 +874,14 @@ export type PropertiesResponseResolvers<ContextType = Context, ParentType extend
 }>;
 
 export type PropertyResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Property'] = ResolversParentTypes['Property']> = ResolversObject<{
-  amenities?: Resolver<Maybe<Array<ResolversTypes['String']>>, ParentType, ContextType>;
+  amenities?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   availableFrom?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   availableTo?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   createdAt?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   host?: Resolver<ResolversTypes['Host'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  images?: Resolver<Maybe<Array<ResolversTypes['String']>>, ParentType, ContextType>;
+  images?: Resolver<Maybe<Array<Maybe<ResolversTypes['String']>>>, ParentType, ContextType>;
   isActive?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   location?: Resolver<ResolversTypes['Location'], ParentType, ContextType>;
   maxRoommates?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;

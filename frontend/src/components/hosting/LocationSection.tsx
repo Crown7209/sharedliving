@@ -24,12 +24,11 @@ const InputField = ({
       onChange={(e) => {
         if (type === "number") {
           const inputValue = e.target.value;
-          // Allow empty string for better UX when user is typing
+
           if (inputValue === "") {
             onChange("");
           } else {
             const numValue = Number(inputValue);
-            // Only update if it's a valid number
             if (!isNaN(numValue)) {
               onChange(numValue);
             }

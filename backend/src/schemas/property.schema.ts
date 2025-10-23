@@ -38,8 +38,8 @@ export const propertySchema = gql`
     roomCount: Int!
     shared: Boolean!
     maxRoommates: Int
-    images: [String!]
-    amenities: [String!]
+    images: [String]
+    amenities: [String]
     propertyType: PropertyType
     privacyType: PrivacyType
     availableFrom: String!
@@ -50,28 +50,28 @@ export const propertySchema = gql`
   }
 
   input LocationInput {
-    city: String!
-    district: String!
+    city: String
+    district: String
     address: String
     lat: Float
     lng: Float
   }
 
   input CreatePropertyInput {
-    title: String!
+    title: String
     description: String
     hostId: ID!
-    location: LocationInput!
-    pricePerMonth: Float!
-    roomCount: Int!
-    shared: Boolean!
+    location: LocationInput
+    pricePerMonth: Float
+    roomCount: Int
+    shared: Boolean
     maxRoommates: Int
-    images: [String!]
-    amenities: [String!]
+    images: [String]
+    amenities: [String]
     propertyType: PropertyType
     privacyType: PrivacyType
-    availableFrom: String!
-    availableTo: String!
+    availableFrom: String
+    availableTo: String
     isActive: Boolean
   }
 
@@ -84,8 +84,8 @@ export const propertySchema = gql`
     roomCount: Int
     shared: Boolean
     maxRoommates: Int
-    images: [String!]
-    amenities: [String!]
+    images: [String]
+    amenities: [String]
     propertyType: PropertyType
     privacyType: PrivacyType
     availableFrom: String
@@ -102,7 +102,7 @@ export const propertySchema = gql`
     shared: Boolean
     propertyType: PropertyType
     privacyType: PrivacyType
-    amenities: [String!]
+    amenities: [String]
     availableFrom: String
     availableTo: String
     isActive: Boolean

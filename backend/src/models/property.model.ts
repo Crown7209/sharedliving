@@ -2,8 +2,8 @@ import { model, Schema, models } from "mongoose";
 import { Property, PropertyType, PrivacyType } from "../types/property.types";
 
 const LocationSchema = new Schema({
-  city: { type: String, required: true, trim: true },
-  district: { type: String, required: true, trim: true },
+  city: { type: String, trim: true },
+  district: { type: String, trim: true },
   address: { type: String, trim: true },
   lat: { type: Number },
   lng: { type: Number },
@@ -17,13 +17,13 @@ const HostSchema = new Schema({
 
 const PropertySchema = new Schema<Property>(
   {
-    title: { type: String, required: true, trim: true },
+    title: { type: String, trim: true },
     description: { type: String, trim: true },
     host: { type: HostSchema, required: true },
-    location: { type: LocationSchema, required: true },
-    pricePerMonth: { type: Number, required: true, min: 0 },
-    roomCount: { type: Number, required: true, min: 1 },
-    shared: { type: Boolean, required: true, default: false },
+    location: { type: LocationSchema },
+    pricePerMonth: { type: Number, min: 0 },
+    roomCount: { type: Number, min: 1 },
+    shared: { type: Boolean, default: false },
     maxRoommates: { type: Number, min: 1 },
     images: { type: [String], default: [] },
     amenities: { type: [String], default: [] },
@@ -37,8 +37,8 @@ const PropertySchema = new Schema<Property>(
       enum: ["entire_place", "private_room", "shared_room"] as PrivacyType[],
       default: "entire_place",
     },
-    availableFrom: { type: String, required: true },
-    availableTo: { type: String, required: true },
+    availableFrom: { type: String },
+    availableTo: { type: String },
     isActive: { type: Boolean, required: true, default: true },
   },
   {
